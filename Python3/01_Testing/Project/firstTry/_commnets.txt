@@ -1,0 +1,31 @@
+Dear Fadel,
+
+The time difference should not matter as you and I do not need to be on-line at
+the sametime.  However from Kuala Lumper I can imagine the remote desktop
+connection itself might be slow.  If it's terribly slow with keystroke delays
+making Eclipse difficult to use, let me know.
+Some students use ssh to access there sandbox.  Even so, some use of Eclipse is
+ needed to complete the work.
+
+Your function should test itself whether a and b are both int type, and if not,
+ raise TypeError explicitly i.e. the function should "blow the whistle"
+and raise the exception, if either input is not an int.  As currently written,
+inputs of 2.0 and 3.0 would add to 5.0 no problem, but both inputs
+are floats, so a TypeError should be raised.
+
+The tests I most want to see involve assertRaises and look like this:
+
+    self.assertRaises(TypeError, supper_adder, 1.0, 2.0)
+
+With assertRaises, the callable object (supper_adder) is simply named,
+no parentheses, no calling.  Then,
+everything after that is an argument to that name.  I expect a TypeError
+above because neither 1.0 nor 2.0
+are ints.
+
+assertRaises is often misunderstood at first.  This part of Python may be
+confusing, so no worries you get
+to work at this some more.  Thank you for introducing yourself.  I look forward
+to working with you.
+
+-Kirby

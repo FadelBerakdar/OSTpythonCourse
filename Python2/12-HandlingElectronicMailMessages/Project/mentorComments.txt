@@ -1,0 +1,37 @@
+Hi Fadel,
+
+Excellent.  Good workout.
+
+This is our way of touring what the guts of an email client might be like.
+You've played with a GUI front end for opening and writing emails.  Now you've
+looked at sending them.  In the next project we examine the database core one
+would expect for storing sent / received / draft emails etc.  We don't actually
+assemble these pieces as the last 20% of the work takes 80% of the time.
+
+FYI, you can't always guess the mime type of the file. The method
+mimetypes.guess_type doesn't always even read a file's contents - sometimes it
+only looks at the file's extension.
+
+When this happens, you can use a generic encoding to bundle it up and send it
+on its way. The recipients client won't be able to choose the right app to open
+it, of course, but at least it will arrive safely. You can make this happen by
+including code something like:
+
+        for fn in attachments:
+            ctype, encoding = mimetypes.guess_type(fn)
+            if not ctype:
+                ctype = 'application/octet-stream'  #  if we're heading to else suite
+
+            maintype, subtype = ctype.split('/', 1)
+
+A good example is in the Python docs:
+
+http://docs.python.org/3.2/library/email-examples.html
+
+Scroll down to the example of emailing all the files in a given directory.
+Note the stack of if / elif / elif /elif /... ending in else, which is where a
+catchall base64 encoding is applied.
+
+The key challenge here is to squeeze content through a pipe that's only
+comfortable with the first 127 ASCII characters. Optimally, you can do that
+with the right encoder, but you can always resort to a default.

@@ -1,0 +1,34 @@
+def supper_adder(a, b):
+    """
+    take two objects and add them together only if they are both of the
+    integer type, Raise type error otherwise.
+    """
+    if isinstance(a, int) & isinstance(b, int):
+        return a+b
+    else:
+        raise TypeError("Only integers are accepted!!")
+
+could also be:
+
+def supper_adder(a, b):
+    """
+    take two objects and add them together only if they are both of the
+    integer type, Raise type error otherwise.
+    """
+    if isinstance(a, int) and isinstance(b, int):
+        return a+b
+    raise TypeError("Only integers are accepted!!")
+
+Note that this test would fail:
+
+        self.assertRaises(TypeError, supper_adder, True, False)
+
+Why?  Because True and False count as instances of Integer (0, 1).
+
+The Boolean class is a subclass of the Integer class.  Not an error.
+
+We will allow supper_adder(True, False) to give True:
+
+        self.assertEqual(supper_adder(True, False), True, "oops")
+
+-Kirby

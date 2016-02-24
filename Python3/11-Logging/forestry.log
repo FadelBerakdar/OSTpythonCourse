@@ -1,0 +1,9 @@
+2016-01-23 17:45:53,832 root:INFO:forestry.py function:start_logging lin e:21 Starting up the forestry program
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:__init__ lin e:60 Instantiated a tree
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:__init__ lin e:100 Instantiated a Lumberjack
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:get_boards lin e:78 tree.get_boards method called
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:cut_down_tree lin e:113 Lumberjack.tree cut down
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:__init__ lin e:60 Instantiated a tree
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:__init__ lin e:100 Instantiated a Lumberjack
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:get_boards lin e:78 tree.get_boards method called
+2016-01-23 17:45:53,834 root:INFO:forestry.py function:cut_down_tree lin e:113 Lumberjack.tree cut down

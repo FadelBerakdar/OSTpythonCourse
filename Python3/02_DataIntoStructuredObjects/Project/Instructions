@@ -1,0 +1,20 @@
+create a file named coconuts.py, with an inventory class that tracks different
+types of coconuts from around the world. The different types of coconuts must
+have these weight attribute values:
+
+    Type        |       Weight
+South Asian     |         3
+Middle Eastern  |        2.5
+American        |        3.5
+
+The inventory class must have the following methods:
+•	add_coconut() accepts a coconut as an argument. Other types throw an AttributeError.
+•	total_weight() provides the total weight of coconuts.
+
+For this project, you may find the isinstance built-in useful.
+You must Include a test_coconuts.py program to confirm all the Inventory class
+methods. The tests must check:
+1.	That different coconut types each have a different weight.
+2.	That if a string object is passed to the Inventory.add_coconut method, an AttributeError is thrown.
+3.	That if 2 South Asian, 1 Middle Eastern, and 3 American coconuts are added to the inventory, the Inventory.total_weight() method returns 19.
+When they are working, submit coconuts.py and test_coconuts.py.

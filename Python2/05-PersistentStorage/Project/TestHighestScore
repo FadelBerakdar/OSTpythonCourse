@@ -1,0 +1,38 @@
+#!usr/bin/env python3
+#                  Highest Score Recorder Testing Module
+#                             TestHighestScore.py
+# By: Fadel Berakdar
+# Date: 3/5/2015
+
+import os
+import unittest
+import shutil
+from HighestScore import high_score
+import tempfile
+
+
+class TestHighScore(unittest.TestCase):
+    def setUp(self):
+        self.ori_dir = os.getcwd()
+        self.new_dir = tempfile.mkdtemp()
+        os.chdir(self.new_dir)
+
+    def test_a_bunch(self):
+        name_score_exp = [('Bree', 50, 50),   # new score
+                          ('Bree', 60, 60),   # higher score
+                          ('Bree', -10, 60),  # lower score
+                          ('Fred', 0, 0)      # new score for new player
+                          ]
+        for name, score, exp in name_score_exp:
+            observed = high_score(name, score)
+            self.assertEqual(observed, exp,
+                             "I'm looking for: " + str(exp) +
+                             " but got:  " + str(observed))
+
+    def tearDown(self):
+        os.chdir(self.ori_dir)
+        shutil.rmtree(self.new_dir)
+
+
+if __name__ == "__main__":
+    unittest.main()
